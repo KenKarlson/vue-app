@@ -1,6 +1,10 @@
-<script setup></script>
+<script setup>
+let message = "Hello";
+</script>
 <template>
-  <div></div>
+  <div>
+    {{ message }}
+  </div>
 </template>
 
 <style scoped></style>
