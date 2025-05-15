@@ -1,8 +1,10 @@
 <script setup>
 import { ref } from "vue";
-let header = "header top";
-let message = "Hello";
+let header = ref("header top");
+let message = ref("Hello");
 let link = ref("<a href='/'>Ссыла</a>");
+
+message.value = "Hello & welcome  ";
 </script>
 <template>
   <div>
