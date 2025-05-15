@@ -9,6 +9,11 @@ export default [
   {
     files: ["**/*.vue", "**/*.js"],
     languageOptions: {
+      globals: {
+        require: "readonly",
+        process: "readonly",
+        console: "readonly",
+      },
       ecmaVersion: "latest",
       sourceType: "module",
     },
@@ -16,5 +21,6 @@ export default [
       "vue/multi-word-component-names": "off",
       "vue/require-default-prop": "off",
     },
+    ignores: ["**/*.test.js", "**/node_modules/**", "dist/**", ".git/**"],
   },
 ];
