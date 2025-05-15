@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+const id = "btn__link";
 let header = ref("header top");
 let message = ref("Hello");
 let link = ref("<a href='/'>Ссыла</a>");
@@ -10,7 +11,7 @@ message.value = "Hello & welcome  ";
   <div>
     <header class="header">{{ header }}</header>
     {{ message }}
-    <div v-html="link"></div>
+    <button :id v-html="link"></button>
     <footer class="footer">footer</footer>
   </div>
 </template>
