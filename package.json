@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "normalize": "node normalize.js"
   },
   "dependencies": {
     "vue": "^3.5.13"

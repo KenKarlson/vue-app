@@ -1,5 +1,4 @@
-// Конфиг Prettier
-// Документация: https://prettier.io/docs/en/options.html
+// Конфиг Prettier// Документация: https://prettier.io/docs/en/options.html
 export default {
   printWidth: 90,
   tabWidth: 2,
