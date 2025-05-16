@@ -1,11 +1,9 @@
-const fs = require("fs");
-const path = require("path");
-const prettier = require("prettier");
+import fs from "fs";
+import path from "path";
+import prettier from "prettier";
 
-// Расширения файлов для обработки
 const EXTENSIONS = [".js", ".ts", ".jsx", ".tsx", ".json", ".html", ".css"];
 
-// Папки и файлы для игнорирования
 let IGNORED_FILES = [];
 
 if (fs.existsSync(".prettierignore")) {
@@ -17,14 +15,11 @@ if (fs.existsSync(".prettierignore")) {
 }
 
 function isIgnored(filePath) {
-  return IGNORED_FILES.some((pattern) => {
-    if (pattern.endsWith("/")) pattern = pattern.slice(0, -1);
-    return filePath.includes(pattern);
-  });
+  return IGNORED_FILES.some((pattern) => filePath.includes(pattern));
 }
 
 function normalizeLineEndings(content) {
-  return content.replace(/\r\n/g, "\n"); // Windows → Unix
+  return content.replace(/\r\n/g, "\n");
 }
 
 function processFile(filePath) {
@@ -36,10 +31,8 @@ function processFile(filePath) {
   try {
     let content = fs.readFileSync(filePath, "utf-8");
 
-    // Нормализация окончаний строк
     content = normalizeLineEndings(content);
 
-    // Форматирование через Prettier
     const ext = path.extname(filePath);
     if (EXTENSIONS.includes(ext)) {
       const options = prettier.resolveConfig.sync(filePath);
@@ -68,7 +61,5 @@ function walkDir(currentPath) {
 }
 
 console.log("🚀 Начинаем нормализацию проекта...");
-
 walkDir(process.cwd());
-
 console.log("✅ Нормализация завершена.");
