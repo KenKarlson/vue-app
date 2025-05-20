@@ -1,19 +1,23 @@
 <script setup>
-import { ref } from "vue";
-const id = "btn__link";
-let header = ref("header top");
-let message = ref("Hello");
-let link = ref("<a href='/'>Ссыла</a>");
-
-message.value = "Hello & welcome  ";
+import Button from "./components/Button.vue";
 </script>
 <template>
-  <div>
-    <header class="header">{{ header }}</header>
-    {{ message }}
-    <button :id v-html="link"></button>
-    <footer class="footer">footer</footer>
-  </div>
+  <main class="main">
+    <Button>Сохранить</Button>
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main {
+  background-color: var(--color-bg-main);
+  padding: 60px 50px;
+  border: none;
+  border-radius: 25px;
+}
+h1 {
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-weight: 400;
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.3);
+}
+</style>
