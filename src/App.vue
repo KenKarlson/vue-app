@@ -4,7 +4,8 @@ import Button from "./components/Button.vue";
 </script>
 <template>
   <main class="main">
-    <Stat />
+    <Stat label="Влажность" value="89%" />
+    <Stat label="Осадки" value="0%" />
     <Button>Сохранить</Button>
   </main>
 </template>
@@ -16,6 +17,7 @@ import Button from "./components/Button.vue";
   border: none;
   border-radius: 25px;
 }
+
 h1 {
   text-transform: uppercase;
   line-height: 1.5;
